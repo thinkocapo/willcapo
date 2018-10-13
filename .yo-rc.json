@@ -1,0 +1,34 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.willcapo.main"
+    },
+    "jhipsterVersion": "5.4.2",
+    "applicationType": "monolith",
+    "baseName": "willcapo",
+    "packageName": "com.willcapo.main",
+    "packageFolder": "com/willcapo/main",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MGM4YmIxZTY4MmRlNDMxNmNmNGJhMDYzMzlhN2U1Mzc1ZjgzNjE5MmI4N2JjNDU1NTNkNmM4YTJhMDEwNzZiMjg4NmM4MjMyYzNkMzIwZjg3NmI2NTI1NDkwMTdmNzZlZjhkNTFmMWFhMzljNzBlMzRiM2NjNGVkNWI5NWJhOGY=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
