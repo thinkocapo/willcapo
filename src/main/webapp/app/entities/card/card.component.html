@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span>Cards</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-card" [routerLink]="['/card/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Card
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="cards">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Image</span></th>
+            <th><span>Title</span></th>
+            <th><span>Description</span></th>
+            <th><span>Date</span></th>
+            <th><span>Behavior</span></th>
+            <th><span>Data</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let card of cards ;trackBy: trackId">
+                <td><a [routerLink]="['/card', card.id, 'view' ]">{{card.id}}</a></td>
+                <td>{{card.image}}</td>
+                <td>{{card.title}}</td>
+                <td>{{card.description}}</td>
+                <td>{{card.date | date:'mediumDate'}}</td>
+                <td>{{card.behavior}}</td>
+                <td>{{card.data}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/card', card.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/card', card.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'card/'+ card.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

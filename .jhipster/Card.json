@@ -1,0 +1,47 @@
+{
+    "name": "Card",
+    "fields": [
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "behavior",
+            "fieldType": "Behavior",
+            "fieldValues": "URL,COMPONENT,STORY"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "tag",
+            "otherEntityName": "tag",
+            "otherEntityRelationshipName": "card"
+        }
+    ],
+    "changelogDate": "20181014211103",
+    "entityTableName": "card",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

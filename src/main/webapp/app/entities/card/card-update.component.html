@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-card-heading">Create or edit a Card</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!card.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="card.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_image">Image</label>
+                    <input type="text" class="form-control" name="image" id="field_image"
+                        [(ngModel)]="card.image" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="card.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="card.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker  #dateDp="ngbDatepicker" [(ngModel)]="card.date"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_behavior">Behavior</label>
+                    <select class="form-control" name="behavior" [(ngModel)]="card.behavior" id="field_behavior" >
+                        <option value="URL">URL</option>
+                        <option value="COMPONENT">COMPONENT</option>
+                        <option value="STORY">STORY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_data">Data</label>
+                    <input type="text" class="form-control" name="data" id="field_data"
+                        [(ngModel)]="card.data" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
