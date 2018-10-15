@@ -240,6 +240,13 @@ ui bootstrap tweaks
 
 /* jhipster-needle-css-add-main JHipster will add new css style */
 
+/* 
+    TODO
+    or try columns in navbar
+    search response navbar
+
+    or collapse to 2 rows before hamburger menu https://getbootstrap.com/docs/3.3/examples/navbar/
+*/
 .divider-vertical {
     height: 50px;
     width: 200px;
