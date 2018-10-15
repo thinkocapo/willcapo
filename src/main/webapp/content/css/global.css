@@ -7,6 +7,10 @@ Will's
     border-radius: 0.25rem;
     border-color: #ced4da;
 }
+.btn-contact-me {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 /* ==============================================================
 Bootstrap tweaks
