@@ -1,16 +1,29 @@
-<nav class="navbar navbar-dark navbar-expand-md jh-navbar">
-    <div class="jh-logo-container float-left">
+<!-- space-between not working. may need container -->
+<!-- <nav class="navbar navbar-dark navbar-expand-md jh-navbar d-flex justify-content-between"> -->
+
+<!-- div or nav -->
+<!-- * try removing a bunch of the classes navbar-expand-md jh-navbar see what they're good for? -->
+
+
+<div class="navbar navbar-dark navbar-expand-md jh-navbar">
+
+    <div class="container-fluid justify-content-center">
+
+
+    <!-- <div class="jh-logo-container float-left"> -->
+    <!-- div jh-logo-center width:100%, prob remove this. * try removing all the Admin stuff then apply justify-content-between-->
+
+        <!-- Is Hamburger Menu when you collapse/minimize the window -->
         <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
             <fa-icon [icon]="'bars'"></fa-icon>
         </a>
-        <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
-            <span class="logo-img"></span>
+
+        <!-- <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()"> -->
+        <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
             <span class="navbar-title">WillcapoNavbar</span> 
-            <!-- <span class="navbar-version">{{version}}</span> -->
         </a>
-    </div>
-    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
-        <ul class="navbar-nav ml-auto">
+
+        <div class="navbar-nav">
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
                     <span>
@@ -19,7 +32,11 @@
                     </span>
                 </a>
             </li>
-            <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+        </div>
+
+    
+    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
+        <ul class="navbar-nav ml-auto">
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
@@ -109,7 +126,7 @@
                   <span *ngIf="!getImageUrl()">
                     <fa-icon [icon]="'user'"></fa-icon>
                     <span>
-                      Account
+                      Ignore
                     </span>
                   </span>
                   <span *ngIf="getImageUrl()">
@@ -151,4 +168,6 @@
             </li>
         </ul>
     </div>
-</nav>
+    </div>
+
+</div>
